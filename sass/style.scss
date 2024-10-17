@@ -1,0 +1,192 @@
+/*!
+Theme Name: My Childcare Academy
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mcca
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+My Childcare Academy is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import "abstracts/abstracts.scss";
+@import "generic/normalize.scss";
+@import "theme/theme.scss";
+
+/*--- Classes for columns structure ---*/
+.wrapper {
+  max-width: 540px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  &.pullleft,
+  &.pullright {
+    max-width: calc(1200px + ((100% - 1200px) / 2));
+  }
+
+  &.pullleft {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  &.pullright {
+    padding-right: 0;
+    padding-right: 0;
+  }
+
+  @include minmedia(768px) {
+    max-width: 720px;
+  }
+
+  @include minmedia(992px) {
+    max-width: 960px;
+  }
+
+  @include minmedia(1200px) {
+    max-width: 1140px;
+  }
+
+  @include minmedia(1400px) {
+    max-width: 1320px;
+  }
+
+  @include minmedia(1440px) {
+    max-width: 1486px;
+  }
+
+  @include maxmedia(767px) {
+    padding: 0 15px;
+  }
+}
+
+.wid100 {
+  max-width: 100%;
+}
+.wid100,
+.wid75,
+.wid70,
+.wid60,
+.wid50,
+.wid40,
+.wid35,
+.wid25 {
+  width: 100%;
+}
+
+.wid75 {
+  max-width: 75%;
+}
+.wid70 {
+  max-width: 70%;
+}
+.wid60 {
+  max-width: 60%;
+}
+.wid50 {
+  max-width: 50%;
+}
+.wid40 {
+  max-width: 40%;
+}
+.wid35 {
+  max-width: 35%;
+}
+.wid33 {
+  max-width: 33.3333%;
+}
+.wid25 {
+  max-width: 25%;
+}
+
+.col-set {
+  .column {
+    width: 100%;
+  }
+
+  &.column2 {
+    @include minmedia(768px) {
+      @include col-set(2, 30);
+    }
+  }
+
+  &.column3 {
+    @include minmedia(768px) {
+      @include col-set(2, 30);
+    }
+
+    @include minmedia(1024px) {
+      @include col-set(3, 40);
+    }
+  }
+
+  &.column4 {
+    @include minmedia(1024px) {
+      @include col-set(3, 30);
+    }
+
+    @include minmedia(1280px) {
+      @include col-set(4, 40);
+    }
+  }
+}
+
+/*---- Display Clases  ---*/
+.dflex {
+  display: flex;
+  flex-wrap: wrap;
+  &.acenter {
+    align-items: center;
+  }
+  &.atop {
+    align-items: start;
+  }
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+  &.justCenter {
+    justify-content: center;
+  }
+  &.justSB {
+    justify-content: space-between;
+  }
+}
+
+.dtab {
+  display: table;
+}
+
+.dcell {
+  display: table-cell;
+  align-content: center;
+  vertical-align: center;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.ptb0 {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}
+
+.pt0 {
+  padding-top: 0;
+}

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Favorite";
+  src: url(../assets/font/Favorit-Light.ttf);
+}
+
+*{
+  font-family: "Favorite";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0 0 20px;
+  font-weight: 700;
+}
+
+$tagsList: 
+"h1, .h1" 44 1.142,
+"h2, .h2" 38 1.1,
+"h3, .h3" 24 1.1,
+"h4, .h4" 20 1.36,
+"h5, .h5" 18 1.3, 
+"h6, .h6" 18 1.36, 
+"body" 18, 
+"a" 16 1,
+"p" 16 1.5, 
+".font16" 16 1;
+
+@each $name, $size, $lineHeight in $tagsList {
+  body:not(.wp-admin) #{$name},
+  .acf-block-preview #{$name} {
+    font-size: #{$size}px;
+    line-height: #{$lineHeight};
+  }
+}
+
+// Tablet Fonts
+$tagsList: 
+"h1, .h1" 44 1.142, 
+"h2, .h2" 46 1.1, 
+"h3, .h3" 28 1.1,
+"h4, .h4" 22 1.36, 
+"h5, .h5" 22 1.4, 
+"h6, .h6" 18 1.36, 
+"body" 18, 
+"a" 16 1,
+"p" 16 1.5, 
+".font16" 16 1;
+@include typoSet($tagsList, 768px);
+
+// Small Desktop Fonts
+$tagsList: 
+"h1, .h1" 66 0.95, 
+"h2, .h2" 52 1.1, 
+"h3, .h3" 34 1.1,
+"h4, .h4" 24 1.36, 
+"h5, .h5" 22 1.6, 
+"h6, .h6" 19 1.36,
+"body" 18, "a" 18 1,
+"p" 18 1.5, 
+".font16" 16 1;
+@include typoSet($tagsList, 992px);
+
+// Desktop Fonts
+$tagsList: 
+"h1, .h1" 86 0.95, 
+"h2, .h2" 58 1.1, 
+"h3, .h3" 34 1.1,
+"h4, .h4" 24 1.36, 
+"h5, .h5" 24 1.6, 
+"h6, .h6" 19 1.36, 
+"body" 20, 
+"a" 20 1,
+"p" 20 1.5, 
+".font16" 16 1;
+@include typoSet($tagsList, 1200px);
+
+// Desktop Fonts
+$tagsList: 
+"h1, .h1" 96 0.95, 
+"h2, .h2" 64 1.1, 
+"h3, .h3" 40 1.1,
+"h4, .h4" 24 1.36, 
+"h5, .h5" 24 1.6, 
+"h6, .h6" 19 1.36, 
+"body" 20, 
+"a" 20 1,
+"p" 20 1.5, 
+".font16" 16 1;
+@include typoSet($tagsList, 1400px);
