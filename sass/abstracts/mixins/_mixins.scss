@@ -28,26 +28,52 @@
   }
 }
 
+@mixin linkUnderline {
+  position: relative;
+
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: $white;
+    width: 0%;
+    height: 2px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover{
+    &::after{
+      width: 100%;
+    }
+  }
+}
+
 @mixin xxlarge {
   @media (max-width: 1801px) {
     @content;
   }
 }
+
 @mixin xmlarge {
   @media (max-width: 1602px) {
     @content;
   }
 }
+
 @mixin xlarge {
   @media (max-width: 1441px) {
     @content;
   }
 }
+
 @mixin xmdlarge {
   @media (max-width: 1366px) {
     @content;
   }
 }
+
 @mixin xmedium {
   @media (max-width: 1200px) {
     @content;

@@ -35,20 +35,7 @@ input[type="checkbox"],
   border: none !important;
 }
 
-iframe,
-form,
-video,
-textarea,
-select,
-body,
-section,
-figure,
-div,
-span,
-button,
-.button,
-input,
-a {
+*{
   box-sizing: border-box;
 }
 
@@ -102,18 +89,6 @@ p {
 
 p:last-of-type {
   margin: 0;
-}
-
-textarea,
-select,
-body,
-section,
-figure,
-div,
-span,
-button,
-input {
-  box-sizing: border-box;
 }
 
 .alignleft {
