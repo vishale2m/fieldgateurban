@@ -11,13 +11,14 @@
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.65;
+        opacity: 0.5;
         z-index: 1;
     }
     
     .banner-image{
         object-fit: cover;
         width: 100%;
+        height: 100%;
 
         &.active{
             animation: scaleImage 0.5s linear;
@@ -30,6 +31,124 @@
                 100%{
                     transform: scale(1);
                 }
+            }
+        }
+    }
+
+    .banner-content{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 50px;
+        z-index: 1;
+        color: $white;
+
+        h1{
+            font-size: 243px;
+            font-weight: 400;
+        }
+    }
+}
+
+.who-we-are{
+    padding: 180px 0;
+
+    .content-row{
+        display: flex;
+        justify-content: space-between;
+
+        .title{
+            max-width: 430px;
+            padding-left: 100px;
+        }
+
+        .content{
+            max-width: 1246px;
+        }
+    }
+}
+
+.ourBelief{
+    overflow: hidden;
+
+    .anime-wrapper{
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        .anime-item{
+            font-size: 250px;
+            animation: scrollLine 20s linear infinite;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #707070;
+            color: rgba(0, 0, 0, 0);
+
+            @keyframes scrollLine {
+                0%{
+                    transform: translate(0);
+                }
+
+                100%{
+                    transform: translate(-50%);
+                }
+            }
+        }
+    }
+
+    .innerRow{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 200px;
+        margin-bottom: -350px;
+
+        .contentBox{
+            max-width: 779px;
+
+            h5{
+                font-size: 32px;
+                margin-bottom: 0;
+                color: $white;
+            }
+
+            h2{
+                font-size: 174px;
+                line-height: 0.9;
+                font-weight: 400;
+                position: relative;
+                z-index: 1;
+                color: $white;
+
+                span{
+                    -webkit-text-stroke-width: 2px;
+                    -webkit-text-stroke-color: $white;
+                    color: rgba(0, 0, 0, 0);
+                }
+            }
+
+            .project-item{
+                margin-top: -144px;
+            }
+        }
+
+        .projects{
+            max-width: 653px;
+
+            .project-item:nth-child(2){
+                margin-top: 715px;
+            }
+        }
+
+        .project-item{
+            position: relative;
+            display: flex;
+
+            span{
+                position: absolute;
+                bottom: 27px;
+                right: 32px;
+                color: $white;
+                font-size: 15px;
             }
         }
     }

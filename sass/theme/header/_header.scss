@@ -2,11 +2,85 @@
   position: absolute;
   width: 100%;
   z-index: 2;
-  padding: 30px 0px;
+  padding: 20px 0px;
   transition: all 0.3s ease-in-out;
 
   &.active-header {
     backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0px;
+    animation: stickyHeader 0.5s ease-in-out;
+
+    @keyframes stickyHeader {
+      0%{
+        top: -100px;
+      }
+
+      100%{
+        top: 0px;
+      }
+    }
+
+    .header-row{
+
+      .menu{
+        opacity: 0;
+
+        li{
+          top: 10px;
+          opacity: 0;
+        }
+        &.menu-nav{
+          opacity: 1;
+
+          li{
+            top: 0;
+            opacity: 1;
+          }
+        }
+      }
+
+      .toggle-menu{
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &.black-header{
+    .header-row {
+      .logo {
+        a{
+          color: $black;
+        }
+      }
+
+      .navbar {
+
+        .menu {
+          a{
+            color: $black;
+            &:after{
+              background-color: $black;
+            }
+          }
+        }
+
+        .toggle-menu{
+          &.toggle-active{
+            span{
+              &::before,
+              &::after{
+                background-color: $black;
+              }
+            }
+          }
+
+          span{
+            background-color: $black;
+          }
+        }
+      }    
+    }
   }
 
   .header-row {
@@ -18,17 +92,30 @@
       a {
         color: $white;
         font-size: 24px;
+        line-height: 1;
       }
     }
 
     .navbar {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
 
       .menu {
         display: flex;
+        align-items: center;
         gap: 30px;
+        transition: all 0.5s ease-in-out;
+        
+        li{
+          position: relative;
+        }
+
+        @for $i from 1 through 5 {
+          li:nth-child(n + #{$i}) {
+            transition: all $i * 0.15s ease-in-out;
+          }
+        }
 
         a {
           font-size: 16px;
@@ -40,11 +127,12 @@
       .toggle-menu {
         width: 25px;
         cursor: pointer;
+        display: none;
 
         span {
           display: block;
           width: 100%;
-          height: 2px;
+          height: 1px;
           background-color: $white;
           transition: all 0.3s ease-in-out;
           position: relative;
@@ -61,7 +149,7 @@
               content: "";
               position: absolute;
               width: 100%;
-              height: 2px;
+              height: 1px;
               background-color: transparent;
               transition: all 0.3s ease-in-out;
             }
