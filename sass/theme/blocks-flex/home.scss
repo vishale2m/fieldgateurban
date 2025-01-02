@@ -135,7 +135,7 @@
             max-width: 653px;
 
             .project-item:nth-child(2){
-                margin-top: 715px;
+                margin-top: 500px;
             }
         }
 
@@ -149,6 +149,75 @@
                 right: 32px;
                 color: $white;
                 font-size: 15px;
+            }
+        }
+    }
+}
+
+.currentProject{
+    background: #f0f0f0;
+
+    .projectSlider{
+        max-width: 1140px;
+        margin-left: auto;
+
+        .slide-inner{
+            position: relative;
+            display: inline-block;
+        }
+
+        .featured-img{
+            overflow: hidden;
+        }
+
+        .slider-content{
+            position: absolute;
+            top: 50%;
+            right: -20%;
+            transform: translateY(-50%);
+            background-color: $white;
+            padding: 50px;
+            max-width: 450px;
+            color: $black;
+        }
+
+        .txt,
+        .communityCta{
+            margin-top: 20px;
+        }
+
+        .slide-logo-img{
+            max-height: 104px;
+            min-height: 55px;
+            object-fit: contain;
+            object-position: top left;
+        }
+
+        a:not(.btn){
+            color: $black;
+
+            &:hover{
+                color: grey;
+            }
+        }
+
+        .slick-slide{
+            &.slick-active{
+                .featured-img{
+                    img{
+                        animation: slideImage 0.3s linear;
+
+                        @keyframes slideImage {
+                            0%{
+                                transform: scale(1.2);
+                            }
+
+                            100%{
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

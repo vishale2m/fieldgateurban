@@ -89,4 +89,12 @@ $(document).ready(function () {
         },
         y: -500,
     });
+
+    $('.projectSlider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 1500,
+        arrows: true,
+        fade: true
+      });
 });

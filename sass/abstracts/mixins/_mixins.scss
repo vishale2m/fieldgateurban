@@ -1,123 +1,190 @@
 @mixin centerBlock {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @mixin col-set($columns: 2, $gap: 24) {
-  > .column {
-    width: calc((100% - (#{$columns} - 1) * #{$gap}px) / #{$columns});
-  }
-  > .column:not(:nth-child(#{$columns}n)) {
-    margin-right: #{$gap}px;
-  }
-  > .column:nth-child(#{$columns}n) {
-    margin-right: 0;
-  }
+    >.column {
+        width: calc((100% - (#{$columns} - 1) * #{$gap}px) / #{$columns});
+    }
+
+    >.column:not(:nth-child(#{$columns}n)) {
+        margin-right: #{$gap}px;
+    }
+
+    >.column:nth-child(#{$columns}n) {
+        margin-right: 0;
+    }
 }
 
 @mixin typoSet($tagsList, $screen) {
-  @include minmedia($screen) {
-    @each $name, $size, $lineHeight in $tagsList {
-      body:not(.wp-admin) #{$name},
-      .acf-block-preview #{$name} {
-        font-size: #{$size}px;
-        line-height: #{$lineHeight};
-      }
+    @include minmedia($screen) {
+        @each $name, $size, $lineHeight in $tagsList {
+
+            body:not(.wp-admin) #{$name},
+            .acf-block-preview #{$name} {
+                font-size: #{$size}px;
+                line-height: #{$lineHeight};
+            }
+        }
     }
-  }
 }
 
 @mixin linkUnderline {
-  position: relative;
+    position: relative;
 
-  &::after{
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    background-color: $white;
-    width: 0%;
-    height: 1px;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  &:hover{
-    &::after{
-      width: 100%;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background-color: $white;
+        width: 0%;
+        height: 1px;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
     }
-  }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
 }
 
 @mixin xxlarge {
-  @media (max-width: 1801px) {
-    @content;
-  }
+    @media (max-width: 1801px) {
+        @content;
+    }
 }
 
 @mixin xmlarge {
-  @media (max-width: 1602px) {
-    @content;
-  }
+    @media (max-width: 1602px) {
+        @content;
+    }
 }
 
 @mixin xlarge {
-  @media (max-width: 1441px) {
-    @content;
-  }
+    @media (max-width: 1441px) {
+        @content;
+    }
 }
 
 @mixin xmdlarge {
-  @media (max-width: 1366px) {
-    @content;
-  }
+    @media (max-width: 1366px) {
+        @content;
+    }
 }
 
 @mixin xmedium {
-  @media (max-width: 1200px) {
-    @content;
-  }
+    @media (max-width: 1200px) {
+        @content;
+    }
 }
 
 // Starting Tablet CSS
 @mixin ipadbig {
-  @media (max-width: 1024px) {
-    @content;
-  }
+    @media (max-width: 1024px) {
+        @content;
+    }
 }
 
 // Starting Mobile CSS
 @mixin ipad {
-  @media (max-width: 991px) {
-    @content;
-  }
+    @media (max-width: 991px) {
+        @content;
+    }
 }
 
 @mixin small {
-  @media (max-width: 767px) {
-    @content;
-  }
+    @media (max-width: 767px) {
+        @content;
+    }
 }
+
 @mixin xsmall {
-  @media (max-width: 641px) {
-    @content;
-  }
+    @media (max-width: 641px) {
+        @content;
+    }
 }
+
 @mixin xxsmall {
-  @media (max-width: 481px) {
-    @content;
-  }
+    @media (max-width: 481px) {
+        @content;
+    }
 }
 
 @mixin minmedia($screen) {
-  @media (min-width: $screen) {
-    @content;
-  }
+    @media (min-width: $screen) {
+        @content;
+    }
 }
 
 @mixin maxmedia($screen) {
-  @media (max-width: $screen) {
-    @content;
-  }
+    @media (max-width: $screen) {
+        @content;
+    }
+}
+
+
+.btn {
+    background: #0a0a0a;
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 28px 36px;
+    letter-spacing: .84px;
+
+    &.hasarw {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .rightArrow {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: "";
+            display: inline-block;
+            border-color: #0a0a0a;
+            border-style: solid;
+        }
+
+        &:before {
+            height: 2px;
+            width: 22px;
+            background: #0a0a0a;
+            border: none;
+            margin: 0 -15px 0 0;
+        }
+
+        &:after {
+            height: 13px;
+            width: 13px;
+            border-width: 2px 2px 0 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    &.liteCont {
+        color: $white;
+        transition: .3s ease;
+
+        .rightArrow:before,
+        .rightArrow:after {
+            border-color: #fff;
+        }
+
+        .rightArrow:before {
+            background: #fff;
+        }
+    }
+
+    &:hover {
+        opacity: .7;
+    }
 }
